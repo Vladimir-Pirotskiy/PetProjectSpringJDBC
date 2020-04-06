@@ -1,0 +1,24 @@
+<p>post works!</p>
+
+
+<table mat-table [dataSource]="posts" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="text">
+        <th mat-header-cell *matHeaderCellDef> Text </th>
+        <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateTime}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="posts"></tr>
+    <tr mat-row *matRowDef="let row; columns: posts;"></tr>
+</table>
